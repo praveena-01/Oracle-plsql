@@ -1,12 +1,14 @@
-Create or replace procedure result (std_id in number, total in number)
+Create or replace function result (std_id in number, total in number)
+returns res
 As
 Int avg:=50;
 Int t:=total;
-String result;
+String result:=res;
 Begin
 If (t>=avg) then
-dbms_output.put_line("Pass");
+result="Pass";
 Else
-dbms_output.put_line("Fail");
+result="Fail";
 end if;
+return result;
 End;
